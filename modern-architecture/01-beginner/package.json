@@ -1,0 +1,16 @@
+{
+  "name": "modern-architecture-01-beginner",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Level 01-beginner — Modern Architecture Bootcamp",
+  "scripts": {
+    "compare": "node examples/01-architecture-patterns/compare.js",
+    "faas": "node examples/02-faas-stateless/handler.js",
+    "function": "node examples/03-first-function/local-invoke.js",
+    "gateway": "node examples/04-api-gateway/server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

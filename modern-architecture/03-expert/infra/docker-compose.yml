@@ -1,0 +1,14 @@
+# Optional local services for Intermediate / Expert labs
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - '6379:6379'
+    command: ['redis-server', '--save', '', '--appendonly', 'no']
+
+  # Lightweight HTTP echo for gateway / resilience demos
+  echo:
+    image: hashicorp/http-echo:1.0
+    command: ['-text=upstream-ok', '-listen=:5678']
+    ports:
+      - '5678:5678'

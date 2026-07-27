@@ -1,0 +1,18 @@
+{
+  "name": "modern-architecture-03-expert",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Level 03-expert — Modern Architecture Bootcamp",
+  "scripts": {
+    "saga": "node examples/01-saga-pattern/orchestrated-saga.js",
+    "resilience": "node examples/02-resilience/demo.js",
+    "otel": "node examples/03-observability/traced-handler.js",
+    "iac-validate": "node examples/04-iac-deployments/validate-config.js",
+    "docker:up": "docker compose -f infra/docker-compose.yml up -d",
+    "docker:down": "docker compose -f infra/docker-compose.yml down"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

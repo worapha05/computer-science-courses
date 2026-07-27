@@ -1,0 +1,39 @@
+# GCP — Cloud Functions gen2 / Cloud Run + traffic split (แนวคิด)
+# ใช้กับ gcloud หรือ Terraform google provider
+
+# Cloud Run revision traffic split (canary 10%)
+# gcloud run services update-traffic SERVICE \
+#   --to-revisions=REV_BLUE=90,REV_GREEN=10 \
+#   --region=asia-southeast1
+
+resource "google_cloudfunctions2_function" "checkout" {
+  name     = "bootcamp-checkout"
+  location = "asia-southeast1"
+
+  build_config {
+    runtime     = "nodejs20"
+    entry_point = "checkout"
+    source {
+      storage_source {
+        bucket = "YOUR_BUCKET"
+        object = "checkout.zip"
+      }
+    }
+  }
+
+  service_config {
+    available_memory   = "256M"
+    timeout_seconds    = 10
+    min_instance_count = 0
+    max_instance_count = 50
+    environment_variables = {
+      STAGE = "dev"
+    }
+    secret_environment_variables {
+      key        = "PAYMENT_API_KEY"
+      project_id = "YOUR_PROJECT"
+      secret     = "payment-api-key"
+      version    = "latest"
+    }
+  }
+}

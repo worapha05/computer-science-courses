@@ -1,0 +1,49 @@
+# Serverless Framework — แนวคิด API + Lambda + canary alias
+service: bootcamp-orders
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ap-southeast-1
+  memorySize: 256
+  timeout: 10
+  environment:
+    STAGE: ${sls:stage}
+  tracing:
+    lambda: true
+    apiGateway: true
+
+plugins:
+  - serverless-plugin-canary-deployments
+
+functions:
+  checkout:
+    handler: handler.checkout
+    events:
+      - httpApi:
+          path: /checkout
+          method: post
+    deploymentSettings:
+      type: Canary10Percent5Minutes
+      alias: live
+      alarms:
+        - CheckoutErrorAlarm
+
+resources:
+  Resources:
+    CheckoutErrorAlarm:
+      Type: AWS::CloudWatch::Alarm
+      Properties:
+        AlarmDescription: Rollback canary if errors spike
+        Namespace: AWS/Lambda
+        MetricName: Errors
+        Statistic: Sum
+        Period: 60
+        EvaluationPeriods: 1
+        Threshold: 5
+        ComparisonOperator: GreaterThanOrEqualToThreshold
+        Dimensions:
+          - Name: FunctionName
+            Value: !Ref CheckoutLambdaFunction

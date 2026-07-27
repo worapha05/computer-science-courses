@@ -1,0 +1,36 @@
+{
+  "strategy": "canary",
+  "function": "checkout",
+  "steps": [
+    {
+      "name": "bake",
+      "v2Percent": 0,
+      "waitMinutes": 5,
+      "rollbackOn": ["alarm:Errors", "alarm:p99Latency"]
+    },
+    {
+      "name": "canary-10",
+      "v2Percent": 10,
+      "waitMinutes": 10,
+      "rollbackOn": ["alarm:Errors", "alarm:p99Latency"]
+    },
+    {
+      "name": "canary-50",
+      "v2Percent": 50,
+      "waitMinutes": 15,
+      "rollbackOn": ["alarm:Errors", "alarm:p99Latency"]
+    },
+    {
+      "name": "full",
+      "v2Percent": 100,
+      "waitMinutes": 0,
+      "rollbackOn": []
+    }
+  ],
+  "multiRegion": {
+    "mode": "active-passive",
+    "primary": "ap-southeast-1",
+    "secondary": "ap-northeast-1",
+    "dns": "failover routing policy"
+  }
+}
