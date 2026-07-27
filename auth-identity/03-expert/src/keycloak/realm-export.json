@@ -1,0 +1,67 @@
+{
+  "realm": "nexbank",
+  "enabled": true,
+  "sslRequired": "external",
+  "registrationAllowed": false,
+  "loginWithEmailAllowed": true,
+  "duplicateEmailsAllowed": false,
+  "resetPasswordAllowed": true,
+  "editUsernameAllowed": false,
+  "bruteForceProtected": true,
+  "roles": {
+    "realm": [
+      { "name": "user", "description": "Default bank user" },
+      { "name": "teller", "description": "Branch teller" },
+      { "name": "admin", "description": "Realm administrator" }
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "nexbank-spa",
+      "name": "NexBank SPA",
+      "enabled": true,
+      "publicClient": true,
+      "directAccessGrantsEnabled": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "attributes": {
+        "pkce.code.challenge.method": "S256"
+      },
+      "redirectUris": ["http://localhost:3003/callback", "http://127.0.0.1:3003/callback"],
+      "webOrigins": ["http://localhost:3003", "http://127.0.0.1:3003"],
+      "protocol": "openid-connect",
+      "fullScopeAllowed": false,
+      "defaultClientScopes": ["openid", "profile", "email"],
+      "optionalClientScopes": []
+    },
+    {
+      "clientId": "nexbank-batch",
+      "name": "NexBank Batch Worker",
+      "enabled": true,
+      "publicClient": false,
+      "secret": "change-me-batch-secret",
+      "serviceAccountsEnabled": true,
+      "standardFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "protocol": "openid-connect"
+    }
+  ],
+  "users": [
+    {
+      "username": "alice",
+      "enabled": true,
+      "email": "alice@nexbank.test",
+      "emailVerified": true,
+      "firstName": "Alice",
+      "lastName": "Wong",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "Passw0rd!",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["user"]
+    }
+  ]
+}
