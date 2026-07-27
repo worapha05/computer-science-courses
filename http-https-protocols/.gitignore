@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Generated lab certificates / keys
+01-beginner/src/certs/*.pem
+01-beginner/src/certs/*.srl
+01-beginner/src/certs/*.ext
+02-intermediate/src/certs/*.pem
+02-intermediate/src/certs/*.srl
+02-intermediate/src/certs/*.ext
+03-expert/src/certs/*.pem
+03-expert/src/certs/*.srl
+03-expert/src/certs/*.ext
+
+# Capture / key logs
+*.pcap
+sslkeys.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+*.log
