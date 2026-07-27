@@ -1,0 +1,22 @@
+{
+  "name": "architecture-beginner",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "solid:srp": "tsx solid/srp.ts",
+    "solid:ocp": "tsx solid/ocp.ts",
+    "solid:lsp": "tsx solid/lsp.ts",
+    "solid:isp": "tsx solid/isp.ts",
+    "solid:dip": "tsx solid/dip.ts",
+    "creational:singleton": "tsx creational/singleton/singleton.ts",
+    "creational:factory-method": "tsx creational/factory-method/factory-method.ts",
+    "creational:abstract-factory": "tsx creational/abstract-factory/abstract-factory.ts",
+    "creational:builder": "tsx creational/builder/builder.ts",
+    "architecture:layered": "tsx architecture/layered.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "@types/node": "^22.10.0"
+  }
+}

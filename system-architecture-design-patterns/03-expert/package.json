@@ -1,0 +1,21 @@
+{
+  "name": "system-architecture-design-patterns-expert",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Expert level examples: Clean Architecture, DDD, CQRS/Event Sourcing, Saga, Resilience, System Design",
+  "type": "module",
+  "scripts": {
+    "clean-architecture": "tsx clean-architecture/index.ts",
+    "ddd": "tsx ddd/order-aggregate.ts",
+    "cqrs": "tsx cqrs-event-sourcing/index.ts",
+    "saga": "tsx saga/index.ts",
+    "resilience": "tsx resilience/index.ts",
+    "system-design": "tsx system-design/index.ts",
+    "all": "npm run clean-architecture && npm run ddd && npm run cqrs && npm run saga && npm run resilience && npm run system-design"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}

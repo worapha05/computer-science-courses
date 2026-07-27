@@ -1,0 +1,26 @@
+{
+  "name": "system-architecture-design-patterns-intermediate",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Level 2 (Intermediate) code examples: Structural & Behavioral Patterns, MVC/MVVM, Hexagonal Architecture",
+  "type": "module",
+  "scripts": {
+    "adapter": "tsx structural/adapter/adapter.ts",
+    "decorator": "tsx structural/decorator/decorator.ts",
+    "facade": "tsx structural/facade/facade.ts",
+    "proxy": "tsx structural/proxy/proxy.ts",
+    "observer": "tsx behavioral/observer/observer.ts",
+    "strategy": "tsx behavioral/strategy/strategy.ts",
+    "state": "tsx behavioral/state/state.ts",
+    "command": "tsx behavioral/command/command.ts",
+    "mvc": "tsx architecture/mvc/mvc.ts",
+    "mvvm": "tsx architecture/mvvm/mvvm.ts",
+    "hexagonal": "tsx architecture/hexagonal/hexagonal.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "tsx": "^4.19.2",
+    "@types/node": "^22.9.0"
+  }
+}
