@@ -1,3 +1,7 @@
+📍 **Nav:** [`🏠 Dev Learning Courses Hub`](https://github.com/worapha05/dev-learning-courses-hub/blob/main/README.md) | [`📂 Computer Science Courses Index`](../README.md) | 📝 [`Prompt File`](https://github.com/worapha05/ai-learning-prompts-hub/blob/main/course-generation/computer-science-courses/data-structures-algorithms-prompt.md)
+
+---
+
 # Zero to Expert: Data Structures & Algorithms Bootcamp
 
 Bootcamp สำหรับเรียนรู้ Data Structures และ Algorithms จากศูนย์จนถึงระดับพร้อมสอบ Technical Interview ของบริษัทซอฟต์แวร์ชั้นนำ
