@@ -1,3 +1,7 @@
+📍 **Nav:** [`🏠 Dev Learning Courses Hub`](https://github.com/worapha05/dev-learning-courses-hub/blob/main/README.md) | [`📂 Computer Science Courses Index`](../README.md) | 📝 [`Prompt File`](https://github.com/worapha05/ai-learning-prompts-hub/blob/main/course-generation/computer-science-courses/basic-security-prompt.md)
+
+---
+
 # Basic Security Concepts — Zero to Expert
 
 bootcamp เรียนรู้ **แนวคิดความปลอดภัยไซเบอร์พื้นฐาน** แบบครบวงจร
