@@ -1,3 +1,7 @@
+📍 **Nav:** [`🏠 Dev Learning Courses Hub`](https://github.com/worapha05/dev-learning-courses-hub/blob/main/README.md) | [`📂 Computer Science Courses Index`](../README.md) | 📝 [`Prompt File`](https://github.com/worapha05/ai-learning-prompts-hub/blob/main/course-generation/computer-science-courses/http-https-protocols-prompt.md)
+
+---
+
 # Zero to Expert: HTTP & HTTPS Protocols Bootcamp
 
 หลักสูตรเรียนรู้ด้วยตนเองแบบครบวงจรสำหรับวิศวกรเครือข่าย, Web Performance Engineer และ Security Practitioner
